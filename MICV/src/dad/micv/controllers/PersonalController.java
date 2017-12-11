@@ -3,8 +3,13 @@ package dad.micv.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.zip.CheckedOutputStream;
 
 import dad.micv.model.Personal;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -56,8 +61,11 @@ public class PersonalController implements Initializable {
     
     // Model
     private Personal personalModel;
+    private ObservableList<String> paises;
+    
     
 	public PersonalController() throws IOException {
+
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("dad/micv/vista/PersonalView.fxml"));
 		loader.setController(this);
 		loader.load();
@@ -75,7 +83,10 @@ public class PersonalController implements Initializable {
 		personalModel.codigoPostalProperty().bindBidirectional(codigoPostalTextField.textProperty());
 		personalModel.localidadProperty().bindBidirectional(localidadTextField.textProperty());
 		
-		personalModel.paisProperty().bind(paisComboBox.itemsProperty());
+		paises = new SimpleListProperty<>(this, "paises", FXCollections.observableArrayList("España"));
+		paisComboBox = new ComboBox<>(paises);
+		paisComboBox.setItems(paises);
+		
 
 	}
 

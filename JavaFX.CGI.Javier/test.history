@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<historial>
+    <comando descripcion="Listar el contenido de la raíz de la unidad C:" interprete="SIMBOLO_SISTEMA">
+        <orden>dir</orden>
+        <parametro>c:\</parametro>
+    </comando>
+    <comando descripcion="Muestra los puertos abiertos" interprete="SIMBOLO_SISTEMA">
+        <orden>netstat</orden>
+        <parametro>-a</parametro>
+        <parametro>-n</parametro>
+        <parametro>-o</parametro>
+        <parametro>-p tcp</parametro>
+    </comando>
+    <comando descripcion="Muestra información sobre el proceso con PID 0" interprete="POWERSHELL">
+        <orden>Get-Process</orden>
+        <parametro>-Id 0</parametro>
+    </comando>
+</historial>
