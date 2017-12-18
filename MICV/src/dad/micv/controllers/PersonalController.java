@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.zip.CheckedOutputStream;
 
+import dad.micv.model.Paises;
 import dad.micv.model.Personal;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
@@ -85,7 +86,7 @@ public class PersonalController implements Initializable {
 		
 		paises = new SimpleListProperty<>(this, "paises", FXCollections.observableArrayList("España"));
 		paisComboBox = new ComboBox<>(paises);
-		paisComboBox.setItems(paises);
+		paisComboBox.getItems().setAll(Paises.getListaPaises());
 		
 
 	}
