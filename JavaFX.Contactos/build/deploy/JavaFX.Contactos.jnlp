@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFX.Contactos.jnlp">
+  <information>
+    <title>JavaFX.Contactos</title>
+    <vendor>Fran Vargas</vendor>
+    <description>Contactos</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFX.Contactos.jar" size="5576" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="dad.contactos.ContactosApp"  name="Contactos" />
+  <update check="background"/>
+</jnlp>
